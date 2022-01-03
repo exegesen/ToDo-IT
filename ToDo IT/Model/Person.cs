@@ -8,16 +8,16 @@ namespace ToDo_IT.Model
     {
         private readonly int personID;
 
-        private String firstName
+        private String FirstName
 
         {
             get { 
-                return firstName; 
+                return FirstName; 
             }
             set {
                 if (value != null && value != string.Empty)
                 {
-                    firstName = value;
+                    FirstName = value;
                 }
                 else {
                     throw new ArgumentException();
