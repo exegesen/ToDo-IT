@@ -12,7 +12,6 @@ namespace ToDo_IT.Model
 
         private string firstName;
         public string FirstName
-
         {
             get { 
                 return firstName; 
@@ -28,7 +27,7 @@ namespace ToDo_IT.Model
             }
         }
 
-        public string lastName;
+        private string lastName;
         public string LastName
         {
             get
