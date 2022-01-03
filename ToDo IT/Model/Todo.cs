@@ -6,5 +6,9 @@ namespace ToDo_IT.Model
 {
     internal class Todo
     {
+
+        public Todo(int todoId) { 
+        
+        }
     }
 }
