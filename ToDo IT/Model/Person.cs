@@ -17,6 +17,10 @@ namespace ToDo_IT.Model
                 {
                     firstName = value;
                 }
+                if (value != string.Empty)
+                {
+                    firstName = value;
+                }
                 else {
                     throw new ArgumentException();
                 }
