@@ -13,11 +13,7 @@ namespace ToDo_IT.Model
                 return firstName; 
             }
             set {
-                if (value != null)
-                {
-                    firstName = value;
-                }
-                if (value != string.Empty)
+                if (value != null && value != string.Empty)
                 {
                     firstName = value;
                 }
