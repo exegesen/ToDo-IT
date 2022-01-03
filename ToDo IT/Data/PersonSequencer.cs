@@ -10,5 +10,8 @@ namespace ToDo_IT.Data
         static int nextPersonID() { 
             return personID++;
         }
+        static void reset() { 
+            personID = 0;
+        }
     }
 }
