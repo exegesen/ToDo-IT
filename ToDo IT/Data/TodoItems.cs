@@ -41,22 +41,18 @@ namespace ToDo_IT.Data
             //TODO NOT IMPLEMENTED
             return null;
         }
-
-        
-        
-
     
-        public Todo[] FindByDoneStatus(bool doneStatus) { 
-        
-        }
-        public Todo[] FindByAssignee(int personId) { 
-        
-        }
-        public Todo[] FindByAssignee(Person assignee) { 
-        
-        }
-        public Todo[] FindUnassignedTodoItems() { 
-        
-        }
+        //public Todo[] FindByDoneStatus(bool doneStatus) { 
+        //
+        //}
+        //public Todo[] FindByAssignee(int personId) { 
+        //
+        //}
+        //public Todo[] FindByAssignee(Person assignee) { 
+        //
+        //}
+        //public Todo[] FindUnassignedTodoItems() { 
+        //
+        //}
     }
 }
