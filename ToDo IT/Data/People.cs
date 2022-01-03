@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ToDo_IT.Model;
 
 namespace ToDo_IT.Data
 {
