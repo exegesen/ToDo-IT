@@ -12,8 +12,8 @@ namespace ToDo_IT.Data
             return person.Length;
         }
 
-        public Person[] FindAll() { 
-        
+        public Person[] FindAll() {
+            return person;
         }
 
         public Person FindById(int personId) { 
