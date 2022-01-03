@@ -6,7 +6,7 @@ namespace ToDo_IT.Model
 {
     internal class Person
     {
-        private readonly personID;
+        private readonly int personID;
         private String firstName
         {
             get { 
