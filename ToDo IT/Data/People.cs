@@ -24,8 +24,13 @@ namespace ToDo_IT.Data
             return null;
         }
 
-        public void Clear() { 
+        public void Clear() {
+            person = new Person[0];// Change this probably
+        }
+        private People() { 
+
         
         }
+
     }
 }
