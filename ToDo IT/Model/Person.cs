@@ -7,13 +7,15 @@ namespace ToDo_IT.Model
     internal class Person
     {
         private readonly int personID;
-        public String FirstName
+
+        private String firstName
+
         {
             get { 
                 return firstName; 
             }
             set {
-                if (value != null)
+                if (value != null && value != string.Empty)
                 {
                     firstName = value;
                 }
