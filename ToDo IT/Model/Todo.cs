@@ -11,7 +11,9 @@ namespace ToDo_IT.Model
         private bool done;
         private Person assignee;
 
-        public Todo(int todoId, String description) { 
+        public Todo(int todoId, String description) {
+            this.todoId = todoId;
+            this.description = description;
         
         }
     }
