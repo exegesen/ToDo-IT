@@ -7,7 +7,9 @@ namespace ToDo_IT.Model
     internal class Person
     {
         private readonly int personID;
+
         private String firstName
+
         {
             get { 
                 return firstName; 
@@ -22,10 +24,12 @@ namespace ToDo_IT.Model
                 }
             }
         }
-        private String lastName;
+        public String LastName;
 
-        public Person() { 
-        
+        public Person(string firstName, string lastName) 
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
 
     }
