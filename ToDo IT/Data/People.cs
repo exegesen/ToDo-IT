@@ -32,5 +32,17 @@ namespace ToDo_IT.Data
         
         }
 
+        public Person newPerson(String firstName, String lastName) {
+            Person p = new Person(firstName,lastName);
+            Person[] newArray = new Person[person.Length+1];
+            for (int i = 0; i < person.Length; i++) { 
+                newArray[i] = person[i];
+            } // copy the old array into the new array
+            newArray[person.Length] = p;
+            person = newArray;
+            return p;
+        
+        }
+
     }
 }
