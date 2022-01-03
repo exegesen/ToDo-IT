@@ -6,14 +6,16 @@ namespace ToDo_IT.Model
 {
     internal class Person
     {
-        private readonly personID;
+        private readonly int personID;
+
         private String firstName
+
         {
             get { 
                 return firstName; 
             }
             set {
-                if (value != null)
+                if (value != null && value != string.Empty)
                 {
                     firstName = value;
                 }
@@ -22,10 +24,12 @@ namespace ToDo_IT.Model
                 }
             }
         }
-        private String lastName;
+        public String LastName;
 
-        public Person() { 
-        
+        public Person(string firstName, string lastName) 
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
         }
 
     }
