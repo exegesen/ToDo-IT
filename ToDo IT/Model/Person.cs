@@ -7,10 +7,26 @@ namespace ToDo_IT.Model
     internal class Person
     {
         private readonly personID;
-        private String firstName;
+        private String firstName
+        {
+            get { 
+                return firstName; 
+            }
+            set {
+                if (value != null)
+                {
+                    firstName = value;
+                }
+                else {
+                    throw new ArgumentException();
+                }
+            }
+        }
         private String lastName;
 
-        public Person() { }
+        public Person() { 
+        
+        }
 
     }
 }
