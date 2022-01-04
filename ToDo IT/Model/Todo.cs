@@ -12,10 +12,15 @@ namespace ToDo_IT.Model
 
         public int TodoID
         {
-            get => TodoID;
+            get => todoId;
 
         }
         private String description;
+        public string Description
+        {
+            get => description;
+            set => description = value;
+        }
 
         private bool done;
         // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties

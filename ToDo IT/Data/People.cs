@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using ToDo_IT.Model;
+[assembly: InternalsVisibleTo("ToDo-IT-Test")]
 
 namespace ToDo_IT.Data
 {
@@ -28,7 +30,7 @@ namespace ToDo_IT.Data
         public void Clear() {
             person = new Person[0];// Change this probably
         }
-        private People() { 
+        internal People() { 
 
         
         }
@@ -44,9 +46,9 @@ namespace ToDo_IT.Data
             return p;
         
         }
-        public Person removePerson(int personId) { 
-        
-        }
+        //public Person removePerson(int personId) { 
+        //
+        //}
 
     }
 }

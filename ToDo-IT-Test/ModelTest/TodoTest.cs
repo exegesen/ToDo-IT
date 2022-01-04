@@ -15,7 +15,7 @@ namespace ToDo_IT_Test.ModelTest
 
             Todo testTodo = new Todo(1, "testDescription");
 
-            Assert.Equal(expectedIdAndDescription, testTodo.TodoId + " " + testTodo.Description);
+            Assert.Equal(expectedIdAndDescription, testTodo.TodoID + " " + testTodo.Description);
         }
     }
 }
