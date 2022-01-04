@@ -18,7 +18,7 @@ namespace ToDo_IT.Data
         }
         public void Clear()
         {
-            todo = new Todo[0];// Change this probably
+            todo = new Todo[0];
         }
         private TodoItems() { 
         
@@ -36,23 +36,95 @@ namespace ToDo_IT.Data
             return t;
 
         }
-        public Person FindById(int personId)
+        public Todo removeTodo(int todoId) { 
+        
+        }
+        public Todo FindById(int todoId)
         {
-            //TODO NOT IMPLEMENTED
+            foreach (Todo t in todo)
+            {
+                if (t.TodoID == todoId)
+                {
+                    return t;
+                }
+            }
             return null;
         }
-    
-        //public Todo[] FindByDoneStatus(bool doneStatus) { 
-        //
-        //}
-        //public Todo[] FindByAssignee(int personId) { 
-        //
-        //}
-        //public Todo[] FindByAssignee(Person assignee) { 
-        //
-        //}
-        //public Todo[] FindUnassignedTodoItems() { 
-        //
-        //}
+
+        public Todo[] FindByDoneStatus(bool doneStatus) {
+            int arrsize = 0;
+            foreach (Todo t in todo) {
+                if (t.Done == doneStatus) {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++) {
+                if (todo[i].Done == doneStatus)
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
+
+        }
+        public Todo[] FindByAssignee(int personId) {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.Assignee.PersonID == personId)
+                {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.PersonID == personId)
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
+        }
+        public Todo[] FindByAssignee(Person assignee) {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.Assignee.Equals(assignee))
+                {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.Equals(assignee))
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
+        }
+        public Todo[] FindUnassignedTodoItems() {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.Assignee.Equals(null))
+                {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.Equals(null))
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
+        }
+
     }
 }

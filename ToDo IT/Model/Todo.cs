@@ -9,27 +9,24 @@ namespace ToDo_IT.Model
     internal class Todo
     {
         private readonly int todoId;
-        public int TodoId 
-        { 
-            get 
-            {
-                return todoId;
-            } 
-        }
-        private string description;
-        public string Description
+
+        public int TodoID
         {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
+            get => TodoID;
+
         }
+        private String description;
+
         private bool done;
+        // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties
+        public bool Done {
+            get => done;
+        }
+
         private Person assignee;
+        public Person Assignee {
+            get => assignee;
+        }
 
         public Todo(int todoId, string description) 
         {
