@@ -18,7 +18,7 @@ namespace ToDo_IT.Data
         }
         public void Clear()
         {
-            todo = new Todo[0];// Change this probably
+            todo = new Todo[0];
         }
         private TodoItems() { 
         
@@ -36,9 +36,15 @@ namespace ToDo_IT.Data
             return t;
 
         }
-        public Person FindById(int personId)
+        public Todo FindById(int todoId)
         {
-            //TODO NOT IMPLEMENTED
+            foreach (Todo t in todo)
+            {
+                if (t.TodoID == todoId)
+                {
+                    return t;
+                }
+            }
             return null;
         }
 
