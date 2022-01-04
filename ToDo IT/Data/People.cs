@@ -44,6 +44,9 @@ namespace ToDo_IT.Data
             return p;
         
         }
+        public Person removePerson(int personId) { 
+        
+        }
 
     }
 }
