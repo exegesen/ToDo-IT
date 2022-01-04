@@ -82,8 +82,24 @@ namespace ToDo_IT.Data
             }
             return newArray;
         }
-        public Todo[] FindByAssignee(Person assignee) { 
-        
+        public Todo[] FindByAssignee(Person assignee) {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.Assignee.Equals(assignee))
+                {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.Equals(assignee))
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
         }
         public Todo[] FindUnassignedTodoItems() { 
         
