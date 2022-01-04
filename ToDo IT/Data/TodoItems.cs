@@ -67,12 +67,20 @@ namespace ToDo_IT.Data
             int arrsize = 0;
             foreach (Todo t in todo)
             {
-                if (t.todoId)
+                if (t.Assignee.PersonID == personId)
                 {
                     arrsize++;
                 }
             }
-
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.PersonID == personId)
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
         }
         public Todo[] FindByAssignee(Person assignee) { 
         
