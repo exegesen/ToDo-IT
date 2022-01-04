@@ -67,7 +67,7 @@ namespace ToDo_IT.Data
             int arrsize = 0;
             foreach (Todo t in todo)
             {
-                if (t.done == doneStatus)
+                if (t.todoId)
                 {
                     arrsize++;
                 }

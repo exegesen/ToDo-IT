@@ -7,24 +7,45 @@ namespace ToDo_IT.Model
     internal class Person
     {
         private readonly int personID;
+        public int PersonID { 
+        get => personID;
 
-        private String FirstName
+        }
 
-        {
+        private String firstName;
+        public String FirstName {
             get { 
-                return FirstName; 
+                return firstName; 
             }
             set {
                 if (value != null && value != string.Empty)
                 {
-                    FirstName = value;
+                    firstName = value;
                 }
                 else {
                     throw new ArgumentException();
                 }
             }
         }
-        public String LastName;
+        public String lastName;
+        public String LastName
+        {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                if (value != null && value != string.Empty)
+                {
+                    lastName = value;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
 
         public Person(string firstName, string lastName) 
         {

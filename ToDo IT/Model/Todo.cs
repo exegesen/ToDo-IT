@@ -6,10 +6,18 @@ namespace ToDo_IT.Model
 {
     internal class Todo
     {
-        public readonly int todoId;
+        private readonly int todoId;
         private String description;
-        public bool done { get; private set; }
+        private bool done;
+        // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties
+        public bool Done {
+            get => done;
+        }
+
         private Person assignee;
+        public Person Assignee {
+            get => assignee;
+        }
 
         public Todo(int todoId, String description) {
             this.todoId = todoId;
