@@ -63,8 +63,16 @@ namespace ToDo_IT.Data
             return newArray;
 
         }
-        public Todo[] FindByAssignee(int personId) { 
-        
+        public Todo[] FindByAssignee(int personId) {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.done == doneStatus)
+                {
+                    arrsize++;
+                }
+            }
+
         }
         public Todo[] FindByAssignee(Person assignee) { 
         

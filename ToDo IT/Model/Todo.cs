@@ -6,7 +6,7 @@ namespace ToDo_IT.Model
 {
     internal class Todo
     {
-        private readonly int todoId;
+        public readonly int todoId;
         private String description;
         public bool done { get; private set; }
         private Person assignee;
