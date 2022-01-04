@@ -49,13 +49,13 @@ namespace ToDo_IT.Data
         public Todo[] FindByDoneStatus(bool doneStatus) {
             int arrsize = 0;
             foreach (Todo t in todo) {
-                if (t.done == doneStatus) {
+                if (t.Done == doneStatus) {
                     arrsize++;
                 }
             }
             Todo[] newArray = new Todo[arrsize];
             for (int i = 0; i < arrsize; i++) {
-                if (todo[i].done == doneStatus)
+                if (todo[i].Done == doneStatus)
                 {
                     newArray[i] = todo[i];
                 }
