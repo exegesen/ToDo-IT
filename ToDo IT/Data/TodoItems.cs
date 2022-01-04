@@ -36,9 +36,9 @@ namespace ToDo_IT.Data
             return t;
 
         }
-        public Todo removeTodo(int todoId) { 
-        
-        }
+        //public Todo removeTodo(int todoId) { 
+        //
+        //}
         public Todo FindById(int todoId)
         {
             foreach (Todo t in todo)

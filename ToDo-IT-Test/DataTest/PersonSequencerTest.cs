@@ -1,10 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xunit;
+using ToDo_IT.Data;
 
 namespace ToDo_IT_Test.DataTest
 {
-    internal class PersonSequencerTest
+    public class PersonSequencerTest
     {
+        [Fact]
+        public void IncrementsAndReturnsNextPersonIdValue()
+        {
+            int expectedPersonId = 1;
+            int actualPersonId = PersonSequencer.nextPersonID();
+
+            Assert.Equal(expectedPersonId, actualPersonId);
+        }
     }
 }
