@@ -46,8 +46,22 @@ namespace ToDo_IT.Data
         
 
     
-        public Todo[] FindByDoneStatus(bool doneStatus) { 
-        
+        public Todo[] FindByDoneStatus(bool doneStatus) {
+            int arrsize = 0;
+            foreach (Todo t in todo) {
+                if (t.done == doneStatus) {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++) {
+                if (todo[i].done == doneStatus)
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
+
         }
         public Todo[] FindByAssignee(int personId) { 
         

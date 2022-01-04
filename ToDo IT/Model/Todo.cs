@@ -8,7 +8,7 @@ namespace ToDo_IT.Model
     {
         private readonly int todoId;
         private String description;
-        private bool done;
+        public bool done { get; private set; }
         private Person assignee;
 
         public Todo(int todoId, String description) {
