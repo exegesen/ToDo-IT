@@ -101,8 +101,24 @@ namespace ToDo_IT.Data
             }
             return newArray;
         }
-        public Todo[] FindUnassignedTodoItems() { 
-        
+        public Todo[] FindUnassignedTodoItems() {
+            int arrsize = 0;
+            foreach (Todo t in todo)
+            {
+                if (t.Assignee.Equals(null))
+                {
+                    arrsize++;
+                }
+            }
+            Todo[] newArray = new Todo[arrsize];
+            for (int i = 0; i < arrsize; i++)
+            {
+                if (todo[i].Assignee.Equals(null))
+                {
+                    newArray[i] = todo[i];
+                }
+            }
+            return newArray;
         }
     }
 }
