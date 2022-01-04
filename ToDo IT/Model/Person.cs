@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
+[assembly: InternalsVisibleTo("ToDo-IT-Test")]
 
 namespace ToDo_IT.Model
 {
@@ -9,9 +11,7 @@ namespace ToDo_IT.Model
         private readonly int personID;
         public int PersonID { 
         get => personID;
-
         }
-
         private String firstName;
         public String FirstName {
             get { 
@@ -27,6 +27,7 @@ namespace ToDo_IT.Model
                 }
             }
         }
+
         public String lastName;
         public String LastName
         {
@@ -52,6 +53,5 @@ namespace ToDo_IT.Model
             this.FirstName = firstName;
             this.LastName = lastName;
         }
-
     }
 }

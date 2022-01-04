@@ -50,6 +50,7 @@ namespace ToDo_IT.Data
             }
             return null;
         }
+
         public Todo[] FindByDoneStatus(bool doneStatus) {
             int arrsize = 0;
             foreach (Todo t in todo) {
@@ -124,5 +125,6 @@ namespace ToDo_IT.Data
             }
             return newArray;
         }
+
     }
 }
