@@ -17,10 +17,11 @@ namespace ToDo_IT.Data
         }
 
         public Person FindById(int personId) {
-            /*d.Add a method 
-             * public Person FindById(int personId)
-             * that return the person that has a matching personId 
-             * as the passed in parameter.*/
+            foreach (Person p in person) {
+                if (p.PersonID == personId) { 
+                    return p;
+                }
+            }
             return null;
         }
 
@@ -30,6 +31,40 @@ namespace ToDo_IT.Data
         private People() { 
 
         
+        }
+
+        public Person newPerson(String firstName, String lastName) {
+            Person p = new Person(firstName,lastName);
+            Person[] newArray = new Person[person.Length+1];
+            for (int i = 0; i < person.Length; i++) { 
+                newArray[i] = person[i];
+            } // copy the old array into the new array
+            newArray[person.Length] = p;
+            person = newArray;
+            return p;
+        
+        }
+        public Person removePerson(int personId) {
+            Person[] p = new Person[person.Length - 1];
+            int i;
+            for (i = 0; i < person.Length; i++)
+            {
+                if (person[i].PersonID == personId)
+                {
+                    break;
+                }
+            }
+            int j;
+            for (j = 0; j < i; j++)
+            {
+                p[j] = person[j];
+            }
+            for (j = i + 1; j < person.Length; j++)
+            {
+                p[j] = person[j];
+            }
+            person = p;
+            return p;
         }
 
     }
