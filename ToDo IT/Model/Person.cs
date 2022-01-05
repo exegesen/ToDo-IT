@@ -27,10 +27,29 @@ namespace ToDo_IT.Model
                 }
             }
         }
-        public String LastName;
-
-        public Person(string firstName, string lastName) 
+        private String lastName;
+        public String LastName
         {
+            get
+            {
+                return lastName;
+            }
+            set
+            {
+                if (value != null && value != string.Empty)
+                {
+                    lastName = value;
+                }
+                else
+                {
+                    throw new ArgumentException();
+                }
+            }
+        }
+
+        public Person(int id, string firstName, string lastName) 
+        {
+            this.personID = id;
             this.FirstName = firstName;
             this.LastName = lastName;
         }

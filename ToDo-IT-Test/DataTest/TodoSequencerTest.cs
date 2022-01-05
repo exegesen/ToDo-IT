@@ -16,5 +16,14 @@ namespace ToDo_IT_Test.DataTest
 
             Assert.Equal(expectedTodoId, actualTodoId);
         }
+
+        [Fact]
+        public void ResetsTodoIdVariable()
+        {
+            int actualTodoId = TodoSequencer.nextTodoID();
+            actualTodoId = TodoSequencer.reset();
+
+            Assert.True(actualTodoId == 0);
+        }
     }
 }

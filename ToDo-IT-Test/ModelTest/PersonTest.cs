@@ -11,11 +11,11 @@ namespace ToDo_IT_Test.ModelTest
         [Fact]
         public void PersonClassTest()
         {
-            string expectedFullName = "testName testLastName";
+            string expectedFullName = "1 testName testLastName";
 
-            Person testPerson = new Person("testName", "testLastName");
+            Person testPerson = new Person(1, "testName", "testLastName");
 
-            Assert.Equal(expectedFullName, testPerson.FirstName + " " + testPerson.LastName);
+            Assert.Equal(expectedFullName, testPerson.PersonID + " " + testPerson.FirstName + " " + testPerson.LastName);
         }
     }
 }
