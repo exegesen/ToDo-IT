@@ -15,14 +15,14 @@ namespace ToDo_IT.Model
             get => todoId;
 
         }
-        private String description;
+        private String description;//sdf
         public string Description
         {
             get => description;
             set => description = value;
         }
 
-        }
+        
         private bool done;
         // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties
         public bool Done {

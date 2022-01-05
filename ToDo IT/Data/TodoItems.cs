@@ -20,8 +20,9 @@ namespace ToDo_IT.Data
         {
             todo = new Todo[0];
         }
-        private TodoItems() { 
-        
+        private TodoItems()
+        {
+
         }
         public Todo newTodo(int id, String description)
         {
@@ -36,6 +37,18 @@ namespace ToDo_IT.Data
             return t;
 
         }
+        /* public Todo newTodo(int id, String description)
+        {
+          Todo t = new Todo(id, description);
+            Todo[] newArray = new Todo[todo.Length + 1];
+            for (int i = 0; i < todo.Length; i++)
+            {
+                newArray[i] = todo[i];
+            } // copy the old array into the new array
+            newArray[todo.Length] = t;
+            todo = newArray;
+            return t;
+        }*/
         public Todo removeTodo(int todoId)
         {
             Todo[] t = new Todo[todo.Length - 1];
