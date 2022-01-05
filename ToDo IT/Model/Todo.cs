@@ -12,13 +12,15 @@ namespace ToDo_IT.Model
 
         public int TodoID
         {
-            get => TodoID;
+            get => todoId;
 
         }
         private String description;
-        public String Description
+        public string Description
         {
             get => description;
+            set => description = value;
+        }
 
         }
         private bool done;
