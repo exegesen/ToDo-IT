@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
+[assembly: InternalsVisibleTo("ToDo-IT-Test")]
 
 namespace ToDo_IT.Model
 {
@@ -10,7 +12,6 @@ namespace ToDo_IT.Model
         public int PersonID { 
         get => personID;
         }
-
         private String firstName;
         public String FirstName {
             get { 
@@ -26,31 +27,12 @@ namespace ToDo_IT.Model
                 }
             }
         }
-        public String lastName;
-        public String LastName
-        {
-            get
-            {
-                return lastName;
-            }
-            set
-            {
-                if (value != null && value != string.Empty)
-                {
-                    lastName = value;
-                }
-                else
-                {
-                    throw new ArgumentException();
-                }
-            }
-        }
+        public String LastName;
 
         public Person(string firstName, string lastName) 
         {
             this.FirstName = firstName;
             this.LastName = lastName;
         }
-
     }
 }
