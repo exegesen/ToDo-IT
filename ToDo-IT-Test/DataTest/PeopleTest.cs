@@ -14,7 +14,8 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsTheLegthOfTheArray()
         {
-            int expectedArrayLength = 0;
+            sut.newPerson("testFirstName", "testLastName");
+            int expectedArrayLength = 1;
 
             int actualArrayLength = sut.Size();
 
@@ -24,10 +25,14 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsPersonArray()
         {
-            Person[] expectedParsonArray = new Person[0];
+            sut.newPerson("testFirstName", "testLastName");
+            Person[] expectedParsonArray = { new Person(1, "testFirstNames", "testLastName") };
             Person[] actualPersonArray = sut.FindAll();
 
-            Assert.Equal(expectedParsonArray, actualPersonArray);
+            int expected = expectedParsonArray[0].PersonID;
+            int actual = actualPersonArray[0].PersonID;
+
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
@@ -35,11 +40,11 @@ namespace ToDo_IT_Test.DataTest
         {
             sut.newPerson("testFirstName", "testLastName");
 
-            string expectedPersonName = "testFirstName testLastName";
+            string expectedPersonName = "1 testFirstName testLastName";
 
-            Person actualPerson = sut.FindById(0);
+            Person actualPerson = sut.FindById(1);
 
-            Assert.Equal(expectedPersonName, actualPerson.FirstName + " " + actualPerson.LastName);
+            Assert.Equal(expectedPersonName, actualPerson.PersonID + " " + actualPerson.FirstName + " " + actualPerson.LastName);
         }
 
         [Fact]
@@ -58,6 +63,16 @@ namespace ToDo_IT_Test.DataTest
             Person newTestPerson = sut.newPerson("testFirstName", "testLastName");
 
             Assert.IsType<Person>(newTestPerson);
+        }
+
+        [Fact]
+        public void ClearsAllPersonObjectsFromThePersonArray()
+        {
+            sut.newPerson("testFirstName", "testLastName");
+
+            sut.Clear();
+
+            Assert.True(sut.Size() == 0);
         }
     }
 }

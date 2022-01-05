@@ -13,9 +13,10 @@ namespace ToDo_IT.Data
         {
             return ++todoID;
         }
-        internal static void reset()
+        internal static int reset()
         {
             todoID = 0;
+            return todoID;
         }
     }
 }

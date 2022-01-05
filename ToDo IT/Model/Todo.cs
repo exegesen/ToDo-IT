@@ -21,8 +21,7 @@ namespace ToDo_IT.Model
             get => description;
             set => description = value;
         }
-
-        }
+        
         private bool done;
         // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties
         public bool Done {
