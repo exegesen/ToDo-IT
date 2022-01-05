@@ -16,5 +16,14 @@ namespace ToDo_IT_Test.DataTest
 
             Assert.Equal(expectedPersonId, actualPersonId);
         }
+
+        [Fact]
+        public void ResetsPersonIdVariable()
+        {
+            int actualPersonId = PersonSequencer.nextPersonID();
+            actualPersonId = PersonSequencer.reset();
+
+            Assert.True(actualPersonId == 0);
+        }
     }
 }

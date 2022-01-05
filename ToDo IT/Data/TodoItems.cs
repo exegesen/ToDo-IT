@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using ToDo_IT.Model;
+[assembly: InternalsVisibleTo("ToDo-IT-Test")]
 
 namespace ToDo_IT.Data
 {
@@ -20,23 +22,23 @@ namespace ToDo_IT.Data
         {
             todo = new Todo[0];
         }
-        private TodoItems() { 
+        public TodoItems() { 
         
         }
         public Todo newTodo(int id, String description)
         {
-            Todo t = new Todo(id, description);
-            Todo[] newArray = new Todo[todo.Length + 1];
+            int nextId = TodoSequencer.nextTodoID();
+            Todo t = new Todo(nextId, description);
+            Array.Resize(ref todo, todo.Length + 1);
+
             for (int i = 0; i < todo.Length; i++)
             {
-                newArray[i] = todo[i];
-            } // copy the old array into the new array
-            newArray[todo.Length] = t;
-            todo = newArray;
-            return t;
+                todo[i] = t;
+            }
 
+            return t;
         }
-        public Todo removeTodo(int todoId)
+        public Todo[] removeTodo(int todoId)
         {
             Todo[] t = new Todo[todo.Length - 1];
             int i;
