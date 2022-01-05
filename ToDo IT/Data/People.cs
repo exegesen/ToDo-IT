@@ -46,7 +46,7 @@ namespace ToDo_IT.Data
             return p;
         
         }
-        public Person removePerson(int personId) {
+        public Person[] removePerson(int personId) {
             Person[] p = new Person[person.Length - 1];
             int i;
             for (i = 0; i < person.Length; i++)
