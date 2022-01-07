@@ -22,19 +22,16 @@ namespace ToDo_IT.Data
         {
             todo = new Todo[0];
         }
-        private TodoItems() { 
+        public TodoItems() { 
         
         }
-        public Todo newTodo(int id, String description)
+        public Todo newTodo(String description)
         {
             int nextId = TodoSequencer.nextTodoID();
             Todo t = new Todo(nextId, description);
             Array.Resize(ref todo, todo.Length + 1);
-
-            for (int i = 0; i < todo.Length; i++)
-            {
-                todo[i] = t;
-            }
+            
+            todo[nextId - 1] = t;
 
             return t;
         }

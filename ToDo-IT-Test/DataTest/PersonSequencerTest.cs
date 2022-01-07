@@ -11,6 +11,8 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void IncrementsAndReturnsNextPersonIdValue()
         {
+            PersonSequencer.reset();
+
             int expectedPersonId = 1;
             int actualPersonId = PersonSequencer.nextPersonID();
 

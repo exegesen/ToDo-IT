@@ -11,6 +11,8 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void IncrementsAndReturnsNextTodoIdValue()
         {
+            TodoSequencer.reset();
+
             int expectedTodoId = 1;
             int actualTodoId = TodoSequencer.nextTodoID();
 

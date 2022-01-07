@@ -10,10 +10,13 @@ namespace ToDo_IT_Test.DataTest
     public class PeopleTest
     {
         People sut = new People();
-
+        
         [Fact]
         public void ReturnsTheLegthOfTheArray()
         {
+            sut.Clear();
+            PersonSequencer.reset();
+
             sut.newPerson("testFirstName", "testLastName");
             int expectedArrayLength = 1;
 
@@ -25,6 +28,9 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsPersonArray()
         {
+            sut.Clear();
+            PersonSequencer.reset();
+
             sut.newPerson("testFirstName", "testLastName");
             Person[] expectedParsonArray = { new Person(1, "testFirstNames", "testLastName") };
             Person[] actualPersonArray = sut.FindAll();
@@ -38,6 +44,9 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsPersonIfFindsAPerson()
         {
+            sut.Clear();
+            PersonSequencer.reset();
+
             sut.newPerson("testFirstName", "testLastName");
 
             string expectedPersonName = "1 testFirstName testLastName";
@@ -50,6 +59,9 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsNullIfDoesNotFindAPerson()
         {
+            sut.Clear();
+            PersonSequencer.reset();
+
             Person expectedPerson = null;
             
             Person actualPerson = sut.FindById(1);
@@ -60,19 +72,26 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void CreatesANewPerson()
         {
+            sut.Clear();
+            PersonSequencer.reset();
+
             Person newTestPerson = sut.newPerson("testFirstName", "testLastName");
 
             Assert.IsType<Person>(newTestPerson);
+
         }
 
         [Fact]
         public void ClearsAllPersonObjectsFromThePersonArray()
         {
+            PersonSequencer.reset();
+
             sut.newPerson("testFirstName", "testLastName");
 
             sut.Clear();
 
             Assert.True(sut.Size() == 0);
+
         }
     }
 }

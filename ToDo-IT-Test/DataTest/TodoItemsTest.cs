@@ -14,18 +14,25 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsTheLegthOfTheArray()
         {
-            sut.newTodo(1, "testDescription");
+            sut.Clear();
+            TodoSequencer.reset();
+
+            sut.newTodo("testDescription");
             int expectedArrayLength = 1;
 
             int actualArrayLength = sut.Size();
 
             Assert.Equal(expectedArrayLength, actualArrayLength);
+
         }
 
         [Fact]
         public void ReturnsTodoArray()
         {
-            sut.newTodo(1, "testDescription");
+            sut.Clear();
+            TodoSequencer.reset();
+
+            sut.newTodo("testDescription");
             Todo[] expectedTodoArray = { new Todo(1, "testDescription") };
             Todo[] actualTodoArray = sut.FindAll();
 
@@ -38,18 +45,26 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void ReturnsTodoIfFindsATodo()
         {
-            sut.newTodo(1, "testDescription");
+            sut.Clear();
+            TodoSequencer.reset();
+
+            sut.newTodo("testDescription");
 
             string expectedTodo = "1 testDescription";
 
             Todo actualTodo = sut.FindById(1);
 
             Assert.Equal(expectedTodo, actualTodo.TodoID + " " + actualTodo.Description);
+
+            sut.Clear();
         }
 
         [Fact]
         public void ReturnsNullIfDoesNotFindATodo()
         {
+            sut.Clear();
+            TodoSequencer.reset();
+
             Todo expectedTodo = null;
 
             Todo actualTodo = sut.FindById(1);
@@ -60,15 +75,22 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void CreatesANewTodo()
         {
-            Todo newTestTodo = sut.newTodo(1, "testDescription");
+            sut.Clear();
+            TodoSequencer.reset();
+
+            Todo newTestTodo = sut.newTodo("testDescription");
 
             Assert.IsType<Todo>(newTestTodo);
+
+            sut.Clear();
         }
 
         [Fact]
         public void ClearsAllTodoObjectsFromTheTodoArray()
         {
-            sut.newTodo(1, "testDescription");
+            TodoSequencer.reset();
+
+            sut.newTodo("testDescription");
 
             sut.Clear();
 
@@ -78,15 +100,20 @@ namespace ToDo_IT_Test.DataTest
         [Fact]
         public void FindsTodoItemsByDoneStatus()
         {
+            sut.Clear();
+            TodoSequencer.reset();
+
             string expectedItemIds = "1, 2, 3";
 
-            sut.newTodo(1, "testDescription");
-            sut.newTodo(2, "testDescription");
-            sut.newTodo(3, "testDescription");
+            sut.newTodo("testDescription");
+            sut.newTodo("testDescription");
+            sut.newTodo("testDescription");
 
             Todo[] actualTodoArray = sut.FindByDoneStatus(false);
 
-            Assert.Equal(expectedItemIds, actualTodoArray[0] + ", " + actualTodoArray[1]  + ", " + actualTodoArray[2]);
+            Assert.Equal(expectedItemIds, actualTodoArray[0].TodoID + ", " + actualTodoArray[1].TodoID  + ", " + actualTodoArray[2].TodoID);
+
+            sut.Clear();
         }
     }
 }
