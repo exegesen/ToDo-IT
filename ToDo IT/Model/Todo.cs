@@ -27,11 +27,13 @@ namespace ToDo_IT.Model
         // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties
         public bool Done {
             get => done;
+            set => done = value;
         }
 
         private Person assignee;
         public Person Assignee {
             get => assignee;
+            set => assignee = value;
         }
 
         public Todo(int todoId, string description) 

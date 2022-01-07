@@ -38,23 +38,18 @@ namespace ToDo_IT.Data
         public Todo[] removeTodo(int todoId)
         {
             Todo[] t = new Todo[todo.Length - 1];
+
             int i;
+            int tempIndex = 0;
             for (i = 0; i < todo.Length; i++)
             {
-                if (todo[i].TodoID == todoId)
+                if (todo[i].TodoID != todoId)
                 {
-                    break;
+                    t[tempIndex] = todo[i];
+                    tempIndex++;
                 }
             }
-            int j;
-            for (j = 0; j < i; j++)
-            {
-                t[j] = todo[j];
-            }
-            for (j = i+1; j < todo.Length; j++)
-            {
-                t[j] = todo[j];
-            }
+            
             todo = t;
             return t;
         }
@@ -78,10 +73,13 @@ namespace ToDo_IT.Data
                 }
             }
             Todo[] newArray = new Todo[arrsize];
-            for (int i = 0; i < arrsize; i++) {
+
+            int tempIndex = 0;
+            for (int i = 0; i < todo.Length; i++) {
                 if (todo[i].Done == doneStatus)
                 {
-                    newArray[i] = todo[i];
+                    newArray[tempIndex] = todo[i];
+                    tempIndex++;
                 }
             }
             return newArray;
@@ -129,17 +127,20 @@ namespace ToDo_IT.Data
             int arrsize = 0;
             foreach (Todo t in todo)
             {
-                if (t.Assignee.Equals(null))
+                if (t.Assignee == null)
                 {
                     arrsize++;
                 }
             }
             Todo[] newArray = new Todo[arrsize];
-            for (int i = 0; i < arrsize; i++)
+
+            int tempIndex = 0;
+            for (int i = 0; i <= arrsize; i++)
             {
-                if (todo[i].Assignee.Equals(null))
+                if (todo[i].Assignee == null)
                 {
-                    newArray[i] = todo[i];
+                    newArray[tempIndex] = todo[i];
+                    tempIndex++;
                 }
             }
             return newArray;
