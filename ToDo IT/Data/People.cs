@@ -31,18 +31,15 @@ namespace ToDo_IT.Data
             person = new Person[0];// Change this probably
         }
         internal People() { 
-
         
         }
 
         public Person newPerson(String firstName, String lastName) {
             int nextId = PersonSequencer.nextPersonID();
-            Person p = new Person(nextId, firstName,lastName);
+            Person p = new Person(nextId, firstName, lastName);
             Array.Resize(ref person, person.Length + 1);
-            
-            for (int i = 0; i < person.Length; i++) { 
-                person[i] = p;
-            }
+                
+            person[nextId - 1] = p;
 
             return p;
         }
