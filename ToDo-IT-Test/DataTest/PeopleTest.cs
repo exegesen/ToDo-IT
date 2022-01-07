@@ -93,5 +93,22 @@ namespace ToDo_IT_Test.DataTest
             Assert.True(sut.Size() == 0);
 
         }
+
+        [Fact]
+        public void RemovesObjectFromArray()
+        {
+            sut.Clear();
+            PersonSequencer.reset();
+
+            Person testPerson = new Person(2, "doesNotContainThisFirstName", "doesNotContainThisLastName");
+
+            sut.newPerson("testFisrtName", "testLastName");
+            sut.newPerson("testFisrtName", "testLastName");
+            sut.newPerson("testFisrtName", "testLastName");
+
+            Person[] actualPersonArray = sut.removePerson(2);
+
+            Assert.DoesNotContain<Person>(testPerson, actualPersonArray);
+        }
     }
 }

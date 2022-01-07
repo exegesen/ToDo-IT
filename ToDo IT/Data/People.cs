@@ -45,23 +45,18 @@ namespace ToDo_IT.Data
         }
         public Person[] removePerson(int personId) {
             Person[] p = new Person[person.Length - 1];
+
             int i;
+            int tempIndex = 0;
             for (i = 0; i < person.Length; i++)
             {
-                if (person[i].PersonID == personId)
+                if (person[i].PersonID != personId)
                 {
-                    break;
+                    p[tempIndex] = person[i];
+                    tempIndex++;
                 }
             }
-            int j;
-            for (j = 0; j < i; j++)
-            {
-                p[j] = person[j];
-            }
-            for (j = i + 1; j < person.Length; j++)
-            {
-                p[j] = person[j];
-            }
+            
             person = p;
             return p;
         }
